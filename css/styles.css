@@ -1,0 +1,205 @@
+:root{
+  --bg:#FAF5EE;
+  --surface:#FFFFFF;
+  --primary:#1F5B57;
+  --primary-dark:#16403D;
+  --accent:#DB8A4B;
+  --accent-deep:#C2702F;
+  --accent-ink:#99500F;
+  --accent-light:#F6E3CE;
+  --text:#2E2B27;
+  --muted:#6E6860;
+  --hairline:#E6DDD0;
+  --maxw:1140px;
+  --pad:24px;
+  --serif:"Zen Old Mincho","Yu Mincho",YuMincho,"Hiragino Mincho ProN","Hiragino Mincho Pro","Noto Serif JP","Songti SC",serif;
+  --sans:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.85;
+  color:var(--text);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+
+/* --- shared components (反復) --- */
+.sec-title{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(26px,4vw,34px);color:var(--primary);
+  text-align:center;line-height:1.4;margin:0;
+}
+.rule{width:60px;height:4px;background:var(--accent);border-radius:2px;margin:16px auto 0}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;color:var(--accent-ink);margin:0 0 6px}
+.btn{
+  display:inline-block;background:var(--accent);color:var(--primary-dark);
+  font-family:var(--sans);font-weight:700;font-size:19px;letter-spacing:.02em;
+  text-decoration:none;padding:16px 40px;border:0;border-radius:999px;
+  cursor:pointer;-webkit-appearance:none;appearance:none;
+  box-shadow:0 12px 24px -10px rgba(154,80,15,.5);
+  transition:transform .15s ease,background .15s ease,color .15s ease;
+}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn:hover{background:var(--accent-deep);color:#fff;transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+.btn:disabled{opacity:.55;cursor:default;pointer-events:none;transform:none;
+  box-shadow:0 6px 14px -8px rgba(154,80,15,.4)}
+
+/* --- hero --- */
+.hero{background:radial-gradient(120% 120% at 86% 18%,#F3E7D6 0%,var(--bg) 55%)}
+.hero-inner{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
+  padding:84px 0;
+}
+.hero-title{
+  font-family:var(--serif);font-weight:700;
+  font-size:clamp(30px,4.6vw,52px);line-height:1.5;letter-spacing:.02em;
+  color:var(--primary);margin:0 0 24px;
+}
+.hero-art svg{display:block;width:100%;height:auto;max-width:470px;margin-inline:auto}
+
+/* --- benefits --- */
+.benefits{background:var(--surface);padding:84px 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px}
+.card{
+  background:var(--surface);border:1px solid var(--hairline);border-radius:16px;
+  padding:32px;box-shadow:0 16px 34px -18px rgba(31,91,87,.22);
+}
+.badge{
+  width:44px;height:44px;border-radius:50%;background:var(--accent);
+  color:var(--primary-dark);font-family:var(--serif);font-weight:700;font-size:20px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+}
+.card-title{font-family:var(--serif);font-weight:700;font-size:22px;line-height:1.4;color:var(--primary);margin:0 0 12px}
+.card-body{font-size:16px;line-height:1.85;margin:0;color:var(--text)}
+
+/* --- curriculum --- */
+.curriculum{background:var(--bg)}
+.cur-head{padding:84px 0 8px}
+.cband{padding:48px 0}
+.cband.alt{background:var(--surface)}
+.crow{display:flex;gap:56px;align-items:center}
+.cband.alt .crow{flex-direction:row-reverse}
+.cmedia{flex:0 0 400px;max-width:400px}
+.cmedia svg{display:block;width:100%;height:auto}
+.ctext{flex:1 1 auto;min-width:0}
+.cur-title{font-family:var(--serif);font-weight:700;font-size:clamp(20px,2.6vw,24px);line-height:1.45;color:var(--primary);margin:0 0 6px}
+.cap{
+  display:inline-block;background:var(--accent-light);color:var(--accent-ink);
+  font-weight:700;font-size:15px;line-height:1.5;padding:7px 16px;border-radius:999px;
+  margin:2px 0 18px;
+}
+.bullets{list-style:none;margin:0;padding:0}
+.bullets li{position:relative;padding-left:22px;margin:0 0 10px;font-size:16px;line-height:1.8}
+.bullets li:last-child{margin-bottom:0}
+.bullets li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+/* --- final cta --- */
+.cta-final{
+  background:radial-gradient(130% 150% at 50% 0%,#1d524e 0%,var(--primary-dark) 60%);
+  color:#fff;padding:96px 0;text-align:center;
+}
+.cta-line{
+  font-family:var(--serif);font-weight:700;color:#fff;
+  font-size:clamp(22px,3.2vw,30px);line-height:1.5;letter-spacing:.02em;
+  margin:0 0 36px;
+}
+
+/* --- responsive --- */
+@media (max-width:860px){
+  .hero-inner{grid-template-columns:1fr;gap:28px;padding:56px 0}
+  .hero-art svg{max-width:360px}
+  .cards{grid-template-columns:1fr;gap:24px;margin-top:36px}
+  .benefits{padding:60px 0}
+  .cur-head{padding:60px 0 4px}
+  .cband,.cband.alt{padding:36px 0}
+  .crow,.cband.alt .crow{flex-direction:column;gap:24px}
+  .cmedia{flex:0 0 auto;width:min(360px,82%);margin-inline:auto}
+  .cta-final{padding:72px 0}
+}
+@media (max-width:560px){
+  :root{--pad:28px}
+  body{font-size:16px}
+  .hero{background:radial-gradient(140% 120% at 86% 14%,#F3E7D6 0%,var(--bg) 60%)}
+  .hero-inner{padding:44px}
+  .hero-title{font-size:28px;line-height:1.55;margin:0 0 28px}
+  .btn{font-size:17px;padding:15px 32px}
+  .card{padding:26px 24px}
+  .benefits{padding:52px 0}
+  .cur-head{padding:52px 0 4px}
+  .cta-final{padding:60px 0}
+  .cta-line{font-size:24px}
+}
+@media (max-width:380px){
+  :root{--pad:22px}
+  .hero-title{font-size:25px}
+}
+
+/* --- illustrations: entrance + idle motion --- */
+@media (prefers-reduced-motion: no-preference){
+  /* 登場アニメ（スクロールで一度だけ） */
+  .hero-art,.cmedia{
+    opacity:0;transform:translateY(26px) scale(.96);
+    transition:opacity .7s ease,transform .8s cubic-bezier(.2,.75,.3,1);
+  }
+  .hero-art.in-view,.cmedia.in-view{opacity:1;transform:translateY(0) scale(1)}
+
+  /* SVG要素の変形基準を自身の中心に */
+  .anim-float,.anim-pulse,.anim-twinkle,.anim-sway,
+  .anim-bounce,.anim-slidex,.anim-scan{transform-box:fill-box;transform-origin:center}
+
+  /* ゆるい常時アニメ */
+  .anim-float  {animation:flt 4s   ease-in-out infinite}
+  .anim-pulse  {animation:pls 2.6s ease-in-out infinite}
+  .anim-twinkle{animation:twk 2.8s ease-in-out infinite}
+  .anim-sway   {animation:swy 5s   ease-in-out infinite}
+  .anim-bounce {animation:bnc 2.8s ease-in-out infinite}
+  .anim-slidex {animation:slx 3.6s ease-in-out infinite}
+  .anim-scan   {animation:scn 2.2s ease-in-out infinite}
+  .anim-dash   {animation:dsh 3s   linear      infinite}
+
+  /* 開始タイミングのずらし */
+  .d1{animation-delay:.35s}.d2{animation-delay:.7s}.d3{animation-delay:1.05s}
+
+  /* 線を「描く」登場アニメ（pathLength="1" 前提） */
+  .draw{stroke-dasharray:1;stroke-dashoffset:1}
+  .in-view .draw{animation:drw .9s .4s ease forwards}
+
+  @keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @keyframes pls{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+  @keyframes twk{0%,100%{opacity:.4;transform:scale(.82) rotate(-8deg)}50%{opacity:1;transform:scale(1.18) rotate(10deg)}}
+  @keyframes swy{0%,100%{transform:rotate(10deg)}50%{transform:rotate(-5deg)}}
+  @keyframes bnc{0%,100%{transform:translateY(0)}45%{transform:translateY(-8px)}65%{transform:translateY(-3px)}}
+  @keyframes slx{0%,100%{transform:translateX(-8px)}50%{transform:translateX(14px)}}
+  @keyframes scn{0%,100%{opacity:.35}50%{opacity:1}}
+  @keyframes dsh{to{stroke-dashoffset:-120}}
+  @keyframes drw{to{stroke-dashoffset:0}}
+}
+
+/* --- 星がふってくる演出（ボタン押下時） --- */
+.spark-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:9999}
+.spark{
+  position:absolute;top:0;display:block;
+  filter:drop-shadow(0 1px 2px rgba(31,91,87,.18));
+  will-change:transform,opacity;
+  animation:starfall var(--dur,3s) cubic-bezier(.35,.1,.7,1) var(--delay,0s) both;
+}
+.spark svg{display:block;width:100%;height:100%}
+@keyframes starfall{
+  0%  {transform:translate3d(0,-14vh,0) rotate(0deg);opacity:0}
+  8%  {opacity:1}
+  88% {opacity:1}
+  100%{transform:translate3d(var(--drift,0),114vh,0) rotate(var(--rot,360deg));opacity:0}
+}
+/* パーン！と放射状に散る */
+@keyframes starburst{
+  0%  {transform:translate3d(0,0,0) rotate(0deg) scale(1);opacity:1}
+  35% {transform:translate3d(calc(var(--bx,0) * .45),calc(var(--by,0) * .45),0) rotate(calc(var(--brot,360deg) * .4)) scale(1.6);opacity:1}
+  100%{transform:translate3d(var(--bx,0),var(--by,0),0) rotate(var(--brot,360deg)) scale(.15);opacity:0}
+}
